@@ -1,0 +1,39 @@
+bot:
+  token: 1684776543:AAGvpYkTFtYpmRIOaoijekJUbKKnnD51gjc
+  username: dkwigo_weather_bot
+
+weather:
+  api:
+    appid: 151dd1cb0e0b87a72ad27a5f5966b30b
+
+format:
+  ru:
+    temperature: "\n\tминимально: %s\n\tмаксимально: %s\n\tощущается: %s\n\tсейчас: %s"
+    forecast: "Сегодня в '%s':\nтемпература: %s\nдавление: %s\nвлажность: %s\nоблачность: %s\nскорость ветра: %s"
+    tp_message: "пожалуйста, ради вашей приватности, введите время по UTC+0:00"
+    sub_success: "Вы подписались на %s"
+  en:
+    temperature: "\n\tmin: %s\n\tmax: %s\n\tfeels like: %s\n\tcurrent: %s"
+    forecast: "Today in '%s':\ntemperature: %s\npressure: %s\nhumidity: %s\ncloudiness: %s\nwind speed: %s"
+    tp_message: "please, to save your privacy, enter UTC+0:00 time"
+    sub_success: "You've been subscribed to %s"
+
+#The name of city must be surrounded with ['] symbol and there must be no other ['] symbols in any language format
+#(at least before city name including ['] around) to make subscriptions work properly
+
+subscriptions:
+  delay: 3600000
+  rate: 3600000
+
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/weather"
+    username: "postgres"
+    password: "Money9999"
+    driver-class-name: "org.postgresql.Driver"
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    database: postgresql
+    database-platform: "org.hibernate.dialect.PostgreSQL10Dialect"
